@@ -1,5 +1,6 @@
-import { GearIcon } from '@primer/octicons-react'
+import { GearIcon, SyncIcon } from '@primer/octicons-react'
 import { Link } from '@primer/react'
+import { ReloadContext } from 'containers/ReloadContext'
 import { VERSION } from 'env'
 import * as React from 'react'
 import { RoundIconButton } from './RoundIconButton'
@@ -11,13 +12,14 @@ type Props = {
 
 export function Footer(props: Props) {
   const { toggleShowSettings } = props
+  const reload = React.useContext(ReloadContext)
   return (
     <div className={'gitako-footer'}>
       <div className="gitako-footer-section">
         <Link
           className={'version'}
           href={wikiLinks.changeLog}
-          title={'Check out new features!'}
+          title={'Gitako changelog'}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -32,12 +34,20 @@ export function Footer(props: Props) {
           👋
         </Link>
       </div>
-      <RoundIconButton
-        aria-label={'settings'}
-        icon={GearIcon}
-        iconColor="fg.muted"
-        onClick={toggleShowSettings}
-      />
+      <div>
+        <RoundIconButton
+          aria-label={'Reload'}
+          icon={SyncIcon}
+          iconColor="fg.muted"
+          onClick={() => reload()}
+        />
+        <RoundIconButton
+          aria-label={'Settings'}
+          icon={GearIcon}
+          iconColor="fg.muted"
+          onClick={toggleShowSettings}
+        />
+      </div>
     </div>
   )
 }

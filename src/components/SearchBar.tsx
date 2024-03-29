@@ -42,7 +42,7 @@ export function SearchBar({ onSearch, onFocus, value }: Props) {
       block
       sx={{ borderRadius: 0 }}
       className={'search-input'}
-      aria-label="search files"
+      aria-label="Search files"
       placeholder={formatWithShortcut(`Search files`, focusSearchInputShortcut)}
       onChange={({ target: { value } }) => onSearch(value, searchMode)}
       value={value}
