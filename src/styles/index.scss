@@ -587,6 +587,11 @@ html[data-with-gitako-spacing='true'] {
       padding: 2px 6px 2px 10px;
       border-top: 1px solid var(--color-border-muted);
 
+      &-section {
+        display: inline-flex;
+        gap: 6px;
+      }
+
       .version {
         color: var(--color-fg-muted);
       }

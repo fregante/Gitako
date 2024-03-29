@@ -13,18 +13,25 @@ export function Footer(props: Props) {
   const { toggleShowSettings } = props
   return (
     <div className={'gitako-footer'}>
-      <Link
-        className={'version'}
-        href={wikiLinks.changeLog}
-        title={'Check out new features!'}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {VERSION}
-      </Link>
-      <Link href={wikiLinks.bye} target="_blank" rel="noopener noreferrer">
-        👋 About to say good bye.
-      </Link>
+      <div className="gitako-footer-section">
+        <Link
+          className={'version'}
+          href={wikiLinks.changeLog}
+          title={'Check out new features!'}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {VERSION}
+        </Link>
+        <Link
+          title="About to say good bye."
+          href={wikiLinks.bye}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          👋
+        </Link>
+      </div>
       <RoundIconButton
         aria-label={'settings'}
         icon={GearIcon}
